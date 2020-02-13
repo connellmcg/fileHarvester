@@ -11,7 +11,7 @@ FileHarvester is a python3 script that will scrape a target for files of a defin
 ## Installation
 
 ```
-git clone https://github.com/cmcginley/fileharvester.git
+git clone https://github.com/cmcginley/fileHarvester.git
 ```
 
 ## Recommended Python Version:
@@ -22,7 +22,7 @@ Windows support may be added.
 
 ## Dependencies:
 
-FielHarvester depends on the `argeparse` python module.
+FielHarvester depends on the `argparse` python module.
 
 These dependencies can be installed using the requirements file:
 
@@ -58,68 +58,33 @@ sudo pip install argparse
 
 ## Usage
 
-Short Form    | Long Form     | Description
-------------- | ------------- |-------------
--d            | --domain      | Domain name to enumerate subdomains of
--b            | --bruteforce  | Enable the subbrute bruteforce module
--p            | --ports       | Scan the found subdomains against specific tcp ports
--v            | --verbose     | Enable the verbose mode and display results in realtime
--t            | --threads     | Number of threads to use for subbrute bruteforce
--e            | --engines     | Specify a comma-separated list of search engines
--o            | --output      | Save the results to text file
--h            | --help        | show the help message and exit
+Short Form    | Long Form       | Description
+------------- | ----------------|-------------
+-s            | --site          | Site to target
+-n            | --newfiletypes  | Clear the defaults and set your own file types
+-a            | --addmore       | Add more file extensions to look for
+-d y          | --download y     | Download all returned results (use y)
+
 
 ### Examples
 
 * To list all the basic options and switches use -h switch:
 
-```python sublist3r.py -h```
+``python3 fileHarvester.py -h``
 
-* To enumerate subdomains of specific domain:
+* To perform a search of pdf, doc and docx files (default setting):
 
-``python sublist3r.py -d example.com``
+``python3 fileHarvester.py example.com``
 
-* To enumerate subdomains of specific domain and show only subdomains which have open ports 80 and 443 :
+* To set your own file types to search:
 
-``python sublist3r.py -d example.com -p 80,443``
+``python3 fileHarvester.py example.com -n txt,bin,db``
 
-* To enumerate subdomains of specific domain and show the results in realtime:
+* To download the results:
 
-``python sublist3r.py -v -d example.com``
+``python3 fileHarvester.py example.com -d y``
+``python3 fileHarvester.py example.com -n xls,xlsx -d y``
 
-* To enumerate subdomains and enable the bruteforce module:
-
-``python sublist3r.py -b -d example.com``
-
-* To enumerate subdomains and use specific engines such Google, Yahoo and Virustotal engines
-
-``python sublist3r.py -e google,yahoo,virustotal -d example.com``
-
-
-## Using Sublist3r as a module in your python scripts
-
-**Example**
-
-```python
-import sublist3r 
-subdomains = sublist3r.main(domain, no_threads, savefile, ports, silent, verbose, enable_bruteforce, engines)
-```
-The main function will return a set of unique subdomains found by Sublist3r
-
-**Function Usage:**
-* **domain**: The domain you want to enumerate subdomains of.
-* **savefile**: save the output into text file.
-* **ports**: specify a comma-sperated list of the tcp ports to scan.
-* **silent**: set sublist3r to work in silent mode during the execution (helpful when you don't need a lot of noise).
-* **verbose**: display the found subdomains in real time.
-* **enable_bruteforce**: enable the bruteforce module.
-* **engines**: (Optional) to choose specific engines.
-
-Example to enumerate subdomains of Yahoo.com:
-```python
-import sublist3r 
-subdomains = sublist3r.main('yahoo.com', 40, 'yahoo_subdomains.txt', ports= None, silent=False, verbose= False, enable_bruteforce= False, engines=None)
-```
 
 ## License
 
@@ -128,4 +93,4 @@ FileHarvester is licensed under the GNU GPL license. take a look at the [LICENSE
 
 
 ## Version
-**Current version is 1.0**
+**Current version is 0.1**
