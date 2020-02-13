@@ -1,6 +1,6 @@
 ## About FileHarvester
 
-FileHarvester is a python3 script that will scrape a target for files of a defined exention. The default files this will look for are: pdf, doc and dox. You can append with your own using the -a command.
+FileHarvester is a python3 script that will scrape a target for files of a defined exention. The default files this will look for are: pdf, doc and docx. You can append with your own using the -a command.
 
 
 ## Screenshots

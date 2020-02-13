@@ -49,8 +49,8 @@ if args.addmore:
         filetypes.append(i)
 
 #-n newfiletypes argument is defined
-filetypes = []
 if args.newfiletypes:
+    filetypes = []
     result = [x.strip() for x in args.newfiletypes.split(',')]
     
     for i in result:
@@ -62,7 +62,7 @@ try:
     for filetype in filetypes:
         query = "site:" + args.site +  " filetype:" + filetype
         print(TGREEN + "Returning top results for " + filetype + ".", ENDC)
-        for j in search(query, tld="com", num=10, stop=10, pause=2): 
+        for j in search(query, num=20, pause=2): 
             print(j) 
             fileList.append(j)
 
