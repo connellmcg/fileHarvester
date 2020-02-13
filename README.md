@@ -54,9 +54,7 @@ sudo pip install argparse
 ```
 
 
-```
-
-## Usage
+### Usage
 
 Short Form    | Long Form       | Description
 ------------- | ----------------|-------------
