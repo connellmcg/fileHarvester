@@ -2,7 +2,7 @@
 
 FileHarvester is a python3 script that will scrape a target for files of a defined extension. 
 
-The default extensions this scrape are: pdf, doc and docx. 
+The default extensions this will scrape are: pdf, doc and docx. 
 
 Running this too often will cause a 'too many requests' message - this is on Google's side. 
 
