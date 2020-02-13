@@ -1,6 +1,6 @@
 ## About FileHarvester
 
-FileHarvester is a python3 script that will scrape a target for files of a defined extension. 
+FileHarvester is an OSINT tool written in python3 that will scrape a target for files of a defined extension. 
 
 The default extensions this will scrape are: pdf, doc and docx. 
 
